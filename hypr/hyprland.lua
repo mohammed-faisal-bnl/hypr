@@ -37,7 +37,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "nautilus"
-local menu = "wofi --show drun"
+local menu = "bash -c 'pkill wofi || bash ~/.config/wofi/scripts/launcher.sh'"
 
 
 -------------------
@@ -61,7 +61,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("swaync")
     hl.exec_cmd("hypridle")
-    hl.exec_cmd("swaybg -i /home/mohammed_faisal/Pictures/Doma.jpg -m fill")
+    hl.exec_cmd("swaybg -i /home/mohammed_faisal/Pictures/girl.jpg -m fill")
 end)
 
 
@@ -188,6 +188,16 @@ hl.curve("fluent", {
     points = {{0.46, 1}, {0.29, 0.99}}
 })
 
+hl.curve("butter", {
+    type = "bezier",
+    points = {{.5, 0.9}, {.1, 1.1}}
+})
+
+hl.curve("butterSoft", {
+    type = "bezier",
+    points = {{0.2, 1}, {0.3, 1}}
+})
+
 -- Original animation settings
 
 hl.animation({leaf = "global", enabled = true, speed = 10, bezier = "default"})
@@ -203,9 +213,9 @@ hl.animation({leaf = "layersIn", enabled = true, speed = 8, bezier = "smoothIn",
 hl.animation({leaf = "layersOut", enabled = true, speed = 8, bezier = "smoothOut", style = "slide right"})
 hl.animation({leaf = "fadeLayersIn", enabled = true, speed = 7, bezier = "almostLinear"})
 hl.animation({leaf = "fadeLayersOut", enabled = true, speed = 7, bezier = "almostLinear"})
-hl.animation({leaf = "workspaces", enabled = true, speed = 14, bezier = "almostLinear", style = "fade"})
-hl.animation({leaf = "workspacesIn", enabled = true, speed = 14, bezier = "almostLinear", style = "fade"})
-hl.animation({leaf = "workspacesOut", enabled = true, speed = 14, bezier = "almostLinear", style = "fade"})
+hl.animation({leaf = "workspaces",    enabled = true, speed = 7, bezier = "butter", style = "slide 100%"})
+hl.animation({leaf = "workspacesIn",  enabled = true, speed = 7, bezier = "butter", style = "slide 100%"})
+hl.animation({leaf = "workspacesOut", enabled = true, speed = 7, bezier = "butter", style = "slide 100%"})
 hl.animation({leaf = "zoomFactor", enabled = true, speed = 9, bezier = "quick"})
 
 
