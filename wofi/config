@@ -1,0 +1,14 @@
+show=drun
+width=480
+height=360
+prompt=
+location=center
+layer=overlay
+allow_markup=false
+allow_images=true
+image_size=22
+insensitive=true
+matching=fuzzy
+no_actions=true
+hide_scroll=true
+term=kitty
